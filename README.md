@@ -1,6 +1,6 @@
-# rcr_erp
+# car_deal
 
-> 人车人后台管理系统
+> 移动端车辆交易平台
 
 ## Build Setup
 
