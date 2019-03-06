@@ -1,0 +1,71 @@
+.container .fff .mint-header-title{
+  color: #FFF;
+  a{
+    color: #FFF;
+  }
+  .is-right .svg-icon{
+    color: #FFF;
+  }
+}
+
+.container .mint-header.fff .is-right a{
+    color: #FFF;
+}
+
+.container p{
+  margin-block-start: 0;
+  margin-block-end: 0;
+}
+
+.group .van-cell{
+  align-items: center;
+}
+.input{
+  // direction: rtl;
+  .mint-cell-text{
+    color: #333;
+  }
+}
+.input .mint-cell-wrapper{
+  padding: 0 rem(15);
+  font-size: rem(14);
+}
+
+.mobileSelect .content .panel .wheel .selectContainer li{
+  direction: rtl;
+}
+
+.banner {
+  width: 100%;
+  height: auto;
+  position: relative;
+  margin-bottom: 20px;
+
+  img {
+    width: 100%;
+    height: auto;
+  }
+
+  .indicators {
+    position: absolute;
+    bottom: rem(10);
+    right: rem(15);
+    color: #999;
+    font-size: rem(12);
+    font-family: $font_bold;
+    letter-spacing: rem(2);
+    z-index: 3;
+  }
+}
+
+.msg_box {
+  .van-pull-refresh__track{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+}
+
+.content .van-cell__value{
+  color: #000;
+}

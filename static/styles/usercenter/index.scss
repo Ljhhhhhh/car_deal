@@ -1,0 +1,38 @@
+p{
+  margin-block-start: 0;
+  margin-block-end: 0;
+}
+.van-cell svg{
+  width: 1em;
+  height: 1em;
+  margin-top: 0.5em;
+  margin-right: rem(15);
+}
+
+.van-button--default{
+  background: #FFF;
+  color: $theme_color
+}
+
+.van-cell .van-cell__value span{
+  color: #C4C7D0;
+}
+
+.set-content input{
+  text-align: left;
+}
+
+.set-content button.van-button--default{
+  // background: #FFF;
+  span{
+    color: #FFF;
+    // font-size: rem(15);
+  }
+}
+.van-button--large{
+  height: 44px;
+  line-height: 44px;
+  span{
+    font-size: rem(20);
+  }
+}

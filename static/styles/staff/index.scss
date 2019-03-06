@@ -1,0 +1,21 @@
+.staff_item .van-swipe-cell__right{
+  height: 64px;
+  width: 90px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  .staff_delete{
+    background: #FF0000;
+    color: #FFF;
+    font-size: rem(24);
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    line-height: 64px;
+  }
+}
+
+p{
+  margin-block-start: 0;
+  margin-block-end: 0;
+}

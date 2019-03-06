@@ -1,0 +1,246 @@
+// rem 单位换算：定为 75px 只是方便运算，750px-75px、640-64px、1080px-108px，如此类推
+$vw_fontsize: 75; // iPhone 6尺寸的根元素大小基准值
+
+@function rem($px) {
+  @return ($px / $vw_fontsize) * 1rem;
+}
+
+// 根元素大小使用 vw 单位
+$vw_design: 750;
+
+html {
+  height: 100%;
+  font-size: ($vw_fontsize / ($vw_design / 2)) * 100vw;
+
+  // 同时，通过Media Queries 限制根元素最大最小值
+  @media screen and (max-width: 320px) {
+    font-size: 64px;
+  }
+
+  @media screen and (min-width: 540px) {
+    font-size: 108px;
+  }
+}
+
+// body 也增加最大最小宽度限制，避免默认100%宽度的 block 元素跟随 body 而过大过小
+body,html {
+  width: 100%;
+  height: 100%;
+  max-width: 540px;
+  min-width: 320px;
+}
+
+p,div,span,em,a,strong,input,select,label {
+  font-family: 'PingFangSC-Regular', 'SourceHanSansCN-Regular', Arial, Helvetica, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+#app {
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+
+$theme_color: #41A0FE;
+$vice_color: #fe6801;
+$font_theme: #333;
+$font_vice: #666;
+$font_bold: 'PingFang-SC-Bold', 'SourceHanSansCN-Bold', Arial, Helvetica, sans-serif;
+font_bold {
+  font-family: 'PingFang-SC-Bold', 'SourceHanSansCN-Bold', Arial, Helvetica, sans-serif;
+  font-weight: bold;
+}
+.container{
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  overflow: hidden;
+  background: #f5f4f7;
+  &.bg_white{
+    background: #FFF;
+  }
+}
+#nprogress .bar {
+  background: $theme_color;
+}
+.slide-enter-active,
+.slide-leave-active,
+.fade-enter-active,
+.fade-leave-active {
+  transition: all .3s;
+}
+
+.slide-enter,
+.slide-leave-to {
+  transform: translate3d(100%, 0, 0);
+}
+
+.fade-enter,
+.fade-leave-to {
+  opacity: 0;
+}
+
+.triangle-down_icon {
+  display: inline-block;
+  width: 0;
+  height: 0;
+  color: #666;
+  border-top: 7px solid currentColor;
+  border-left: 4.5px solid transparent;
+  border-right: 4.5px solid transparent;
+  border-bottom: none;
+  font-size: 0;
+  transition: all .3s;
+
+  &.turn-up {
+    transform: rotate(180deg);
+    color: #41A0FE;
+  }
+}
+.arrow-down{
+  display: inline-block;
+  vertical-align: middle;
+  background: url('~@/assets/images/arrowDown.png') no-repeat;
+  background-position: center;
+  background-size: 100%;
+  width: 12px;
+  height: 6.5px;
+  transition: all .3s;
+  &.turn-up {
+    transform: rotate(180deg);
+    color: #41A0FE;
+  }
+}
+
+@keyframes rotate {
+  from {
+    transform: rotate(0deg);
+  }
+
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+select, input {
+  border: none;
+  text-align: right;
+  appearance: none;
+  -moz-appearance: none;
+  -webkit-appearance: none;
+  background: transparent;
+
+  &:focus {
+    outline: none;
+  }
+}
+select {
+  direction: rtl;
+}
+input::-webkit-inner-spin-button, input::-webkit-clear-button{
+  display: block;
+}
+
+input[type='search'] {
+  text-align: left;
+}
+
+// @extend a;
+
+// mint-ui自定义样式
+.mint-header{
+  background: #FFF;
+  color: #41A0FE;
+  font-size: rem(18);
+  .is-right{
+    color: #333;
+    a{
+      color: #333;
+      font-size: rem(18);
+    }
+  }
+  .is-left{
+    color: #41A0FE;
+    font-size: rem(16);
+    a{
+      color: #41A0FE;
+      font-size: rem(16);
+      padding: 10px;
+      padding-left: 0;
+    }
+  }
+  .mint-header-title{
+    @extend font_bold;
+    color: $font_theme;
+    font-size: rem(18);
+  }
+  i{
+    font-size: rem(18);
+  }
+}
+.van-cell{
+  line-height: 30px;
+}
+.van-cell::after {
+  content: ' ';
+  position: absolute;
+  pointer-events: none;
+  box-sizing: border-box;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  -webkit-transform: scaleY(.5);
+  transform: scaleY(.5);
+  border-bottom: 1px solid #eee;
+}
+
+.van-button--default{
+  background: $theme_color;
+  color: #FFF;
+  border-radius: rem(5);
+  border: none;
+}
+
+.van-dialog {
+  .van-button--default {
+    color: #323233;
+    background-color: #fff;
+    border: 1px solid #ebedf0;
+  }
+  .van-dialog__confirm, .van-dialog__confirm:active {
+    color: #1989fa;
+  }
+}
+
+.van-cell__right-icon{
+  line-height: 30px;
+}
+
+.van-cell__left-icon{
+  line-height: 30px;
+}
+.van-toast {
+  width: rem(150);
+  svg {
+    width: rem(40);
+    height: rem(40);
+  }
+}
+
+// 聊天组件
+.sc-chat-window{
+  font-size: rem(14);
+  .sc-message--text{
+    font-size: 0;
+  }
+  p{
+    margin-block-start: 0;
+    margin-block-end: 0;
+    font-size: rem(14);
+  }
+}

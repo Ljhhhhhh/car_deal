@@ -1,0 +1,14 @@
+.car-detail-info{
+  margin-top: 10px;
+  .van-cell__title{
+    color: red;
+    span{
+      color: #999;
+      font-size: rem(15);
+    }
+  }
+  .van-cell__value{
+    color: #333;
+    font-size: rem(15);
+  }
+}
